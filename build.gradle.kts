@@ -28,7 +28,7 @@ dependencies {
     implementation("io.rsocket.kotlin:rsocket-transport-ktor-server:${rsocketKotlinVersion}")
     testImplementation(kotlin("test-junit5"))
     testImplementation(platform("org.junit:junit-bom:5.7.0"))
-    testImplementation("org.junit.jupiter:junit-jupiter-api")
+    testImplementation("org.junit.jupiter:junit-jupiter")
 }
 
 tasks.test {

@@ -10,3 +10,4 @@ RSocket Kotlin Demo
 # References
 
 * RSocket Kotlin: https://github.com/rsocket/rsocket-kotlin
+* RSocket: https://rsocket.io/

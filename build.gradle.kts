@@ -26,6 +26,7 @@ dependencies {
     // rsocket kotlin server
     implementation("io.ktor:ktor-server-cio:${ktorVersion}")
     implementation("io.rsocket.kotlin:rsocket-transport-ktor-server:${rsocketKotlinVersion}")
+    implementation("ch.qos.logback:logback-classic:1.2.3")
     testImplementation(kotlin("test-junit5"))
     testImplementation(platform("org.junit:junit-bom:5.7.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")

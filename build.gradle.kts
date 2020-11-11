@@ -8,7 +8,7 @@ group = "org.mvnsearch"
 version = "1.0.0-SNAPSHOT"
 
 val kotlinVersion = "1.4.10"
-val ktorVersion = "1.4.1"
+val ktorVersion = "1.4.2"
 val rsocketKotlinVersion = "0.10.0-SNAPSHOT"
 
 repositories {

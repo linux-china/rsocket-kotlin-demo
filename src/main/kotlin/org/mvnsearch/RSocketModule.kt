@@ -5,17 +5,16 @@ import io.ktor.network.selector.*
 import io.ktor.network.sockets.*
 import io.ktor.routing.*
 import io.ktor.util.*
-import io.ktor.utils.io.core.*
 import io.ktor.websocket.*
 import io.rsocket.kotlin.ConnectionAcceptor
 import io.rsocket.kotlin.RSocketRequestHandler
 import io.rsocket.kotlin.core.RSocketServer
-import io.rsocket.kotlin.payload.Payload
+import io.rsocket.kotlin.payload.buildPayload
+import io.rsocket.kotlin.payload.data
 import io.rsocket.kotlin.transport.ktor.server.RSocketSupport
 import io.rsocket.kotlin.transport.ktor.server.rSocket
 import io.rsocket.kotlin.transport.ktor.serverTransport
 import kotlin.coroutines.CoroutineContext
-import kotlin.text.toByteArray
 
 @OptIn(KtorExperimentalAPI::class, InternalAPI::class)
 suspend fun runTcpServer(dispatcher: CoroutineContext, port: Int) {
@@ -27,7 +26,7 @@ suspend fun runTcpServer(dispatcher: CoroutineContext, port: Int) {
 val pingPongAcceptor: ConnectionAcceptor = ConnectionAcceptor {
     RSocketRequestHandler {
         requestResponse {
-            Payload(ByteReadPacket("Pong".toByteArray()))
+            buildPayload { data("Pong") }
         }
     }
 }

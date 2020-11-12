@@ -9,7 +9,7 @@ version = "1.0.0-SNAPSHOT"
 
 val kotlinVersion = "1.4.10"
 val ktorVersion = "1.4.2"
-val rsocketKotlinVersion = "0.10.0-SNAPSHOT"
+val rsocketKotlinVersion = "0.11.5"
 
 repositories {
     jcenter()

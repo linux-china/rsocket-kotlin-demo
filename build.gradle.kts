@@ -1,15 +1,15 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "1.4.10"
+    kotlin("jvm") version "1.4.21"
 }
 
 group = "org.mvnsearch"
 version = "1.0.0-SNAPSHOT"
 
-val kotlinVersion = "1.4.10"
-val ktorVersion = "1.4.2"
-val rsocketKotlinVersion = "0.11.5"
+val kotlinVersion = "1.4.21"
+val ktorVersion = "1.4.3"
+val rsocketKotlinVersion = "0.12.0"
 
 repositories {
     jcenter()

@@ -1,44 +1,43 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "1.4.21"
+    kotlin("jvm") version "1.6.20"
 }
 
 group = "org.mvnsearch"
 version = "1.0.0-SNAPSHOT"
 
-val kotlinVersion = "1.4.21"
-val ktorVersion = "1.4.3"
-val rsocketKotlinVersion = "0.12.0"
+val kotlinVersion = "1.6.20"
+val ktorVersion = "2.0.0"
+val rsocketKotlinVersion = "0.15.4"
 
 repositories {
-    jcenter()
     mavenCentral()
-    maven(url = "https://oss.jfrog.org/oss-snapshot-local")
-    maven(url = "https://dl.bintray.com/kotlinx/kotlinx")
 }
 
 dependencies {
     implementation("io.rsocket.kotlin:rsocket-core:${rsocketKotlinVersion}")
+    implementation("io.rsocket.kotlin:rsocket-ktor-client:${rsocketKotlinVersion}")
+    implementation("io.rsocket.kotlin:rsocket-ktor-server:${rsocketKotlinVersion}")
     // rsocket kotlin client
-    implementation("io.ktor:ktor-client-cio:${ktorVersion}")
-    implementation("io.rsocket.kotlin:rsocket-transport-ktor-client:${rsocketKotlinVersion}")
+    implementation("io.rsocket.kotlin:rsocket-transport-ktor-tcp:${rsocketKotlinVersion}")
+    implementation("io.rsocket.kotlin:rsocket-transport-ktor-websocket:${rsocketKotlinVersion}")
     // rsocket kotlin server
-    implementation("io.ktor:ktor-server-cio:${ktorVersion}")
+    implementation("io.rsocket.kotlin:rsocket-transport-ktor-websocket-server:${rsocketKotlinVersion}")
     implementation("io.rsocket.kotlin:rsocket-transport-ktor-server:${rsocketKotlinVersion}")
-    implementation("ch.qos.logback:logback-classic:1.2.3")
+    // ktor CIO
+    implementation("io.ktor:ktor-client-cio:${ktorVersion}")
+    implementation("io.ktor:ktor-server-cio:${ktorVersion}")
+    implementation("ch.qos.logback:logback-classic:1.2.11")
     testImplementation(kotlin("test-junit5"))
-    testImplementation(platform("org.junit:junit-bom:5.7.0"))
+    testImplementation(platform("org.junit:junit-bom:5.8.2"))
     testImplementation("org.junit.jupiter:junit-jupiter")
 }
 
-tasks.test {
-    useJUnitPlatform()
-}
 
 tasks.withType<KotlinCompile>() {
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "11"
         freeCompilerArgs = listOf("-Xopt-in=kotlin.RequiresOptIn")
     }
 }

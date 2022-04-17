@@ -8,6 +8,7 @@ import io.rsocket.kotlin.RSocketRequestHandler
 import io.rsocket.kotlin.core.RSocketServer
 import io.rsocket.kotlin.ktor.server.RSocketSupport
 import io.rsocket.kotlin.ktor.server.rSocket
+import io.rsocket.kotlin.payload.Payload
 import io.rsocket.kotlin.payload.buildPayload
 import io.rsocket.kotlin.payload.data
 import io.rsocket.kotlin.transport.ktor.tcp.TcpServerTransport
@@ -21,8 +22,12 @@ suspend fun runTcpServer(dispatcher: CoroutineContext, port: Int) {
 
 val pingPongAcceptor: ConnectionAcceptor = ConnectionAcceptor {
     RSocketRequestHandler {
-        requestResponse {
-            buildPayload { data("Pong") }
+        //handler for request/response
+        requestResponse { payload: Payload ->
+            // println(request.data.readText()) //print request payload data
+            buildPayload {
+                data("""{ "data": "Server response" }""")
+            }
         }
     }
 }

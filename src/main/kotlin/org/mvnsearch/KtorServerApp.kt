@@ -1,17 +1,16 @@
 package org.mvnsearch
 
-import io.ktor.application.*
-import io.ktor.features.*
 import io.ktor.http.*
-import io.ktor.response.*
-import io.ktor.routing.*
+import io.ktor.server.application.*
 import io.ktor.server.cio.*
-import io.ktor.util.*
+import io.ktor.server.response.*
+import io.ktor.server.routing.*
+import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
-@OptIn(KtorExperimentalAPI::class)
+@OptIn(DelicateCoroutinesApi::class)
 fun main(args: Array<String>) {
     GlobalScope.launch {
         runTcpServer(Dispatchers.IO, 42252)
@@ -20,8 +19,6 @@ fun main(args: Array<String>) {
 }
 
 fun Application.hello() {
-    install(DefaultHeaders)
-    install(CallLogging)
     routing {
         get("/") {
             call.respondText("Hello World!", ContentType.Text.Plain)

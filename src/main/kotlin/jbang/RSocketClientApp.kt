@@ -1,4 +1,3 @@
-//JAVA 11
 //KOTLIN 1.6.20
 //DEPS io.rsocket.kotlin:rsocket-core-jvm:0.15.4
 //DEPS io.rsocket.kotlin:rsocket-transport-ktor-tcp-jvm:0.15.4

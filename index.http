@@ -1,0 +1,16 @@
+### HTTP index page
+GET http://localhost:8080
+
+### RSocket over tcp
+RSOCKET hello
+Host: tcp://localhost:42252
+Content-Type: text/plain
+
+hello
+
+### RSocket over WebSocket
+RSOCKET hello
+Host: ws://localhost:8080/rsocket
+Content-Type: text/plain
+
+hello

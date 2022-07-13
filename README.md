@@ -11,3 +11,4 @@ RSocket Kotlin Demo
 
 * RSocket Kotlin: https://github.com/rsocket/rsocket-kotlin
 * RSocket: https://rsocket.io/
+* Getting started with RSocket Kotlin: https://lankydan.dev/getting-started-with-rsocket-kotlin

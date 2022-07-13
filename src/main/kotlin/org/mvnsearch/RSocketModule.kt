@@ -15,7 +15,7 @@ import io.rsocket.kotlin.transport.ktor.tcp.TcpServerTransport
 import kotlin.coroutines.CoroutineContext
 
 suspend fun runTcpServer(dispatcher: CoroutineContext, port: Int) {
-    println("Start TCP server on 0.0.0.0:${port}")
+    println("RSocket Server on tcp://0.0.0.0:${port}")
     val transport = TcpServerTransport("0.0.0.0", 42252)
     RSocketServer().bind(transport, pingPongAcceptor).handlerJob.join()
 }
@@ -38,5 +38,5 @@ fun Application.rsocket() {
     routing {
         rSocket("/rsocket", acceptor = pingPongAcceptor)
     }
-    println("RSocket enabled!")
+    println("RSocket Server on ws://0.0.0.0:8080/rsocket")
 }

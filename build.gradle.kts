@@ -23,6 +23,7 @@ dependencies {
     implementation("io.rsocket.kotlin:rsocket-transport-ktor-tcp:${rsocketKotlinVersion}")
     implementation("io.rsocket.kotlin:rsocket-transport-ktor-websocket:${rsocketKotlinVersion}")
     // rsocket kotlin server
+    implementation("io.rsocket.kotlin:rsocket-transport-ktor-websocket-client:${rsocketKotlinVersion}")
     implementation("io.rsocket.kotlin:rsocket-transport-ktor-websocket-server:${rsocketKotlinVersion}")
     // ktor CIO
     implementation("ch.qos.logback:logback-classic:1.2.11")

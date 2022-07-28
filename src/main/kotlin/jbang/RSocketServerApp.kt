@@ -26,7 +26,7 @@ fun main() {
         }
     }
     runBlocking {
-        println("RSocket Server started on 0.0.0.0:42262")
+        println("RSocket Server started on 0.0.0.0:42252")
         server.handlerJob.join()
     }
 }

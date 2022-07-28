@@ -30,7 +30,7 @@ dependencies {
     implementation("io.ktor:ktor-server-cio-jvm:2.0.3")
     implementation("io.ktor:ktor-client-cio-jvm:2.0.3")
     testImplementation(kotlin("test-junit5"))
-    testImplementation(platform("org.junit:junit-bom:5.8.2"))
+    testImplementation(platform("org.junit:junit-bom:5.9.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
 }
 

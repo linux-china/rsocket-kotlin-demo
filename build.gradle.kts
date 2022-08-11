@@ -8,7 +8,7 @@ group = "org.mvnsearch"
 version = "1.0.0-SNAPSHOT"
 
 val kotlinVersion = "1.7.10"
-val ktorVersion = "2.0.3"
+val ktorVersion = "2.1.0"
 val rsocketKotlinVersion = "0.15.4"
 
 repositories {
@@ -27,8 +27,8 @@ dependencies {
     implementation("io.rsocket.kotlin:rsocket-transport-ktor-websocket-server:${rsocketKotlinVersion}")
     // ktor CIO
     implementation("ch.qos.logback:logback-classic:1.2.11")
-    implementation("io.ktor:ktor-server-cio-jvm:2.0.3")
-    implementation("io.ktor:ktor-client-cio-jvm:2.0.3")
+    implementation("io.ktor:ktor-server-cio-jvm:${ktorVersion}")
+    implementation("io.ktor:ktor-client-cio-jvm:${ktorVersion}")
     testImplementation(kotlin("test-junit5"))
     testImplementation(platform("org.junit:junit-bom:5.9.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
